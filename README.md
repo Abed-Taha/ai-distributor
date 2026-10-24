@@ -155,12 +155,15 @@ The Docker Compose setup runs the following services:
 | Next.js frontend | `ai-distributors-web`      | `4200`       |
 | NestJS backend   | `ai-distributors-api`      | `3000`       |
 | PostgreSQL       | `ai-distributors-postgres` | `5432`       |
+| pgAdmin          | `ai-distributors-pgadmin`  | `5050`       |
 
 Start the services:
 
 ```bash
 pnpm docker:up
 ```
+
+Open pgAdmin at `http://localhost:5050` and sign in with `PGADMIN_EMAIL` and `PGADMIN_PASSWORD` from `.env`. The `AI Distributor` PostgreSQL server is preconfigured.
 
 Follow logs:
 
