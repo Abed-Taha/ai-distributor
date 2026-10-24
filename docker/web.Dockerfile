@@ -3,6 +3,7 @@ FROM node:22-alpine
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 ENV CI=true
+ENV WATCHPACK_POLLING=true
 
 RUN npm install --global pnpm@11.20.0
 
