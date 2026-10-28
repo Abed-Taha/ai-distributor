@@ -96,21 +96,24 @@ Actual ports depend on your environment and application configuration.
 
 ## Development Commands
 
-| Command               | Description                                    |
-| --------------------- | ---------------------------------------------- |
-| `pnpm install`        | Install workspace dependencies                 |
-| `pnpm copy-env`       | Create `.env` from `.env.example` if missing   |
-| `pnpm dev`            | Start the frontend and backend locally         |
-| `pnpm dev:web`        | Start the Next.js frontend only                |
-| `pnpm dev:api`        | Start the NestJS backend only                  |
-| `pnpm docker:build`   | Rebuild Docker images without cache            |
-| `pnpm docker:up`      | Start Docker services in the background        |
-| `pnpm docker:dev`     | Build and start Docker services                |
-| `pnpm docker:logs`    | Follow Docker service logs                     |
-| `pnpm docker:down`    | Stop and remove Docker containers and networks |
-| `pnpm docker:start`   | Start existing stopped containers              |
-| `pnpm docker:stop`    | Stop containers without removing them          |
-| `pnpm docker:restart` | Restart Docker containers                      |
+| Command                   | Description                                               |
+| ------------------------- | --------------------------------------------------------- |
+| `pnpm install`            | Install workspace dependencies                            |
+| `pnpm copy-env`           | Create `.env` from `.env.example` if missing              |
+| `pnpm dev`                | Start the frontend and backend locally                    |
+| `pnpm dev:web`            | Start the Next.js frontend only                           |
+| `pnpm dev:api`            | Start the NestJS backend only                             |
+| `pnpm docker:build`       | Rebuild Docker images without cache                       |
+| `pnpm docker:up`          | Start Docker services in the background                   |
+| `pnpm docker:dev`         | Build and start Docker services                           |
+| `pnpm docker:logs`        | Follow Docker service logs                                |
+| `pnpm docker:down`        | Stop and remove Docker containers and networks            |
+| `pnpm docker:start`       | Start existing stopped containers                         |
+| `pnpm docker:stop`        | Stop containers without removing them                     |
+| `pnpm docker:restart`     | Restart Docker containers                                 |
+| `pnpm docker:install:api` | Install API dependencies inside the running API container |
+| `pnpm docker:install:web` | Install Web dependencies inside the running Web container |
+| `pnpm docker:install`     | Install dependencies for both API and Web containers      |
 
 ## Environment Variables
 

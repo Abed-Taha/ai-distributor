@@ -36,6 +36,9 @@
     "docker:start": "docker compose --env-file .env -f docker/docker-compose.yaml start",
     "docker:stop": "docker compose --env-file .env -f docker/docker-compose.yaml stop",
     "docker:restart": "docker compose --env-file .env -f docker/docker-compose.yaml restart",
+    "docker:install:api": "docker compose --env-file .env -f docker/docker-compose.yaml exec api pnpm install",
+    "docker:install:web": "docker compose --env-file .env -f docker/docker-compose.yaml exec web pnpm install",
+    "docker:install": "docker compose --env-file .env -f docker/docker-compose.yaml exec api pnpm install && docker compose --env-file .env -f docker/docker-compose.yaml exec web pnpm install",
     "lint": "pnpm -r --if-present lint",
     "typecheck": "pnpm -r --if-present typecheck",
     "prepare": "husky"
