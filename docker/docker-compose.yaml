@@ -12,12 +12,12 @@ services:
     environment:
       NODE_ENV: development
       PORT: ${WEB_PORT:-4200}
-      NEXT_TELEMETRY_DISABLED: '1'
-      WATCHPACK_POLLING: 'true'
+      NEXT_TELEMETRY_DISABLED: "1"
+      WATCHPACK_POLLING: "true"
       API_BASE_URL: http://api:${API_PORT:-3000}
       NEXT_PUBLIC_API_BASE_URL: http://localhost:${API_PORT:-3000}
     ports:
-      - '${WEB_PORT:-4200}:${WEB_PORT:-4200}'
+      - "${WEB_PORT:-4200}:${WEB_PORT:-4200}"
     volumes:
       - ..:/workspace
       - /workspace/node_modules
@@ -38,11 +38,11 @@ services:
     environment:
       NODE_ENV: development
       PORT: ${API_PORT:-3000}
-      CHOKIDAR_USEPOLLING: 'true'
+      CHOKIDAR_USEPOLLING: "true"
       OBSERVE_ENABLED: ${OBSERVE_ENABLED:-false}
       DATABASE_URL: postgresql://${POSTGRES_USER:-app}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-ai_distributor}?schema=public
     ports:
-      - '${API_PORT:-3000}:${API_PORT:-3000}'
+      - "${API_PORT:-3000}:${API_PORT:-3000}"
     volumes:
       - ..:/workspace
       - /workspace/node_modules
@@ -60,15 +60,12 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-app}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
     ports:
-      - '127.0.0.1:${POSTGRES_PORT:-5432}:5432'
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test:
-        [
-          'CMD-SHELL',
-          'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"'
-        ]
+        ["CMD-SHELL", 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
       interval: 5s
       timeout: 5s
       retries: 10
@@ -79,10 +76,10 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@example.com}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:?Set PGADMIN_PASSWORD in .env}
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
-      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
     ports:
-      - '${PGADMIN_PORT:-5050}:80'
+      - "${PGADMIN_PORT:-5050}:80"
     volumes:
       - pgadmin_data:/var/lib/pgadmin
       - ./pgAdmin/server.json:/pgadmin4/servers.json:ro

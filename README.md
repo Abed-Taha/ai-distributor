@@ -196,22 +196,26 @@ To remove the database volume as well, use `docker compose down -v`. **This dele
 
 ## Code Quality
 
-Run linting and TypeScript checks before committing or opening a pull request.
+Run formatting, linting, and TypeScript checks before committing or opening a pull request.
 
-| Command          | Description                                                                    |
-| ---------------- | ------------------------------------------------------------------------------ |
-| `pnpm lint`      | Run linting across workspace packages that define a lint script                |
-| `pnpm typecheck` | Run TypeScript checks across workspace packages that define a typecheck script |
+| Command             | Description                                                                    |
+| ------------------- | ------------------------------------------------------------------------------ |
+| `pnpm format`       | Format supported files across the project using Prettier                       |
+| `pnpm format:check` | Check formatting without modifying files                                       |
+| `pnpm lint`         | Run linting across workspace packages that define a lint script                |
+| `pnpm typecheck`    | Run TypeScript checks across workspace packages that define a typecheck script |
 
 ### Run checks locally
 
 ```bash
+pnpm format
+pnpm format:check
 pnpm lint
 pnpm typecheck
 ```
 
 ### GitHub Actions
 
-Lint and typecheck should run automatically through GitHub Actions on every push and pull request when the CI workflow is configured.
+Formatting checks, linting, and type checking should run automatically through GitHub Actions on every push and pull request when the CI workflow is configured.
 
-Make sure each application or package defines the corresponding `lint` and `typecheck` scripts in its `package.json`. Packages without these scripts are skipped by the root workspace commands.
+Make sure Prettier is installed at the workspace root and each application or package defines the corresponding `lint` and `typecheck` scripts in its `package.json`. Packages without these scripts are skipped by the root workspace commands.

@@ -1,0 +1,25 @@
+{
+  "eslint.useFlatConfig": true,
+  "eslint.workingDirectories": [
+    {
+      "directory": "apps/api",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "apps/web",
+      "changeProcessCWD": true
+    }
+  ],
+  "prettier.requireConfig": true,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "files.watcherExclude": {
+    "**/.next/**": true,
+    "**/.turbo/**": true,
+    "**/coverage/**": true,
+    "**/dist/**": true,
+    "**/node_modules/**": true,
+    "**/out/**": true
+  }
+}

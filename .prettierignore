@@ -1,0 +1,41 @@
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+.next/
+out/
+coverage/
+
+# Monorepo and tooling caches
+.nx/
+.turbo/
+.cache/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Lock files
+pnpm-lock.yaml
+pnpm-workspace.yaml
+package-lock.json
+yarn.lock
+
+# Generated files
+generated/
+*.generated.ts
+*.min.js
+*.min.css
+
+# Logs
+logs/
+*.log
+
+# IDE and OS files
+.DS_Store
+.idea/
+.vscode/

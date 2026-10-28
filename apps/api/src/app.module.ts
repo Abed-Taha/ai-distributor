@@ -46,7 +46,7 @@ const isObserveEnabled =
         username: config.get<string>('POSTGRES_USER'),
         password: config.get<string>('POSTGRES_PASSWORD'),
         database: config.get<string>('POSTGRES_DB'),
-        entities: [], // entities 
+        entities: [], // entities
         synchronize: true, // Development only
       }),
     }),
