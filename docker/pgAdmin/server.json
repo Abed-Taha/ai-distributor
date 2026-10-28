@@ -1,0 +1,14 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "AI Distributor",
+      "Group": "Servers",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "ai_distributor",
+      "Username": "ai_distributor",
+      "SSLMode": "prefer",
+      "PassFile": "/pgpass"
+    }
+  }
+}

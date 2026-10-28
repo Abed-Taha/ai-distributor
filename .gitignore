@@ -1,0 +1,85 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+coverage/
+
+# Vite
+apps/web/.vite/
+.vite/
+
+# Next.js
+apps/api/.next/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# Cache
+.cache/
+.turbo/
+.nx/
+.eslintcache
+*.tsbuildinfo
+
+# Database and local data
+*.sqlite
+*.sqlite3
+*.db
+
+# Docker local overrides
+docker-compose.override.yaml
+docker-compose.override.yml
+
+# Testing
+playwright-report/
+test-results/
+.nyc_output/
+
+# IDEs and editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Certificates and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Package manager debug files
+.pnpm-debug.log
+
+# Environment files for local tools
+.vercel/

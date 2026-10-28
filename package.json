@@ -1,0 +1,51 @@
+{
+  "name": "ai-distributor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered WhatsApp order management for B2B distributors",
+  "keywords": [
+    "ai",
+    "distributor",
+    "whatsapp",
+    "saas",
+    "order-management"
+  ],
+  "license": "ISC",
+  "type": "module",
+  "packageManager": "pnpm@11.20.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.20.0",
+      "onFail": "download"
+    }
+  },
+  "scripts": {
+    "copy-env": "cp -n .env.example .env",
+    "dev": "dotenv -e .env -- concurrently -k -n WEB,API \"pnpm --filter web dev\" \"pnpm --filter api start:dev\"",
+    "dev:web": "dotenv -e .env -- pnpm --filter web dev",
+    "dev:api": "dotenv -e .env -- pnpm --filter api start:dev",
+    "docker:dev": "docker compose --env-file .env -f docker/docker-compose.yaml up --build",
+    "docker:up": "docker compose --env-file .env -f docker/docker-compose.yaml up -d",
+    "docker:build": "docker compose --env-file .env -f docker/docker-compose.yaml build --no-cache",
+    "docker:down": "docker compose --env-file .env -f docker/docker-compose.yaml down",
+    "docker:logs": "docker compose --env-file .env -f docker/docker-compose.yaml logs -f",
+    "docker:start": "docker compose --env-file .env -f docker/docker-compose.yaml start",
+    "docker:stop": "docker compose --env-file .env -f docker/docker-compose.yaml stop",
+    "docker:restart": "docker compose --env-file .env -f docker/docker-compose.yaml restart",
+    "docker:install:api": "docker compose --env-file .env -f docker/docker-compose.yaml exec api pnpm install",
+    "docker:install:web": "docker compose --env-file .env -f docker/docker-compose.yaml exec web pnpm install",
+    "docker:install": "docker compose --env-file .env -f docker/docker-compose.yaml exec api pnpm install && docker compose --env-file .env -f docker/docker-compose.yaml exec web pnpm install",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "dotenv-cli": "^11.0.0",
+    "husky": "^9.1.7"
+  }
+}
